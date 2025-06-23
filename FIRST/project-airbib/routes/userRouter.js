@@ -1,14 +1,18 @@
+//Core module
+const path=require("path");
+
+//External module
 const express =require('express');
 const userRouter=express.Router();
+
+//Local Module
+const rootPath=require('../utils/pathUtils');
+
 
 
 userRouter.get("/",(req,res,next)=>{
     
-    res.send(
-        `<h1>Welcome to AIRBUB</h1>
-        <button><a href="/home">Add Home</a></button>
-        `
-    )
+    res.sendFile(path.join(rootPath,'views','home.html'))
     
 })
 
