@@ -17,6 +17,5 @@ routContact.post("/contact-us",(req,res,next)=>{
     res.sendFile( path.join(rootPath,'pages','thanks.html'));
 })
 
-module.exports=routContact
 
 

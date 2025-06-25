@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airbnb Clone</title>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-airbnb logo-icon"></i>
+        <span class="logo-text">airbnb</span>
+      </div>
+      <nav class="main-nav">
+        <a href="#" class="nav-link">Become a Host</a>
+        <a href="#" class="nav-link">Help</a>
+        <a href="#" class="nav-link">Sign Up</a>
+        <a href="#" class="nav-link login-btn">Log In</a>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Find your perfect getaway</h1>
+        <h2 class="hero-subtitle">Discover unique homes and experiences</h2>
+        
+        <div class="registered-homes">
+          <h3 class="homes-title">Our Registered Homes</h3>
+          <div class="homes-list">
+            <% registeredHomes.forEach(home => { %>
+              <div class="home-card">
+                <div class="home-icon">
+                  <i class="fas fa-home"></i>
+                </div>
+                <div class="home-details">
+                  <p class="home-name"><%= home.houseName %></p>
+                  <p class="home-number">#<%= home.houseNumber %></p>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+        
+        <a href="/add-home" class="cta-button">Add Your Home</a>
+      </div>
+    </section>
+    
+    <section class="features-section">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3>Whole homes</h3>
+          <p>Comfortable private places with room for friends or family</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3>Unique stays</h3>
+          <p>Spaces that are more than just a place to sleep</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-globe-americas"></i>
+          </div>
+          <h3>Experiences</h3>
+          <p>Activities designed to help you live like a local</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p>&copy; 2023 Airbnb Clone, Inc. All rights reserved</p>
+          <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
