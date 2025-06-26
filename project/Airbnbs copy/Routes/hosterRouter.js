@@ -8,23 +8,23 @@ const rootPath=require('../utils/pathUtils');
 
 hosterRouter.get("/add-home",(req,res,next)=>{
     console.log("Hoter page get",req.url, req.method);
-    // res.render('addHome',{registeredHomes:registeredHomes});
-    res.sendFile(path.join(rootPath,'views','addHome.html'));
+    res.render('addHome',{pageTitle:'Add home'});
+    // res.sendFile(path.join(rootPath,'views','addHome.html'));
     
 
 });
 
 const registeredHomes=[];
-const registeredNumbers=[];
+
 
 hosterRouter.post("/add-home",(req,res,next)=>{
     console.log("Hoter page post",req.body,req.body.houseName);
-    registeredHomes.push({houseName:req.body.houseName, houseNumber:req.body.number});
+    registeredHomes.push(req.body);
+  
  
-    //  res.render('homeAdded',{registeredHomes:registeredHomes});
-        res.sendFile(path.join(rootPath,'views','homeAdded.html'));
+     res.render('homeAdded',{pageTitle:'Home Added Success full'});
+        // res.sendFile(path.join(rootPath,'views','homeAdded.html'));
 });
 
-exports.hosterRouter=hosterRouter;
+exports.hosterRouter=hosterRouter
 exports.registeredHomes=registeredHomes;
-exports.registeredNumbers=registeredNumbers;

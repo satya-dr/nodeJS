@@ -20,7 +20,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(userRouter);
 app.use(hosterRouter);
 app.use((req,res,next)=>{
-    res.status(404).render('404',{registeredHomes:registeredHomes});
+    res.status(404).render('404',{pageTitle:'Page not Found'});
 })
 
 

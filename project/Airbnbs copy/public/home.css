@@ -42,6 +42,12 @@ a {
   z-index: 100;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -94,6 +100,12 @@ a {
   text-align: center;
 }
 
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .hero-title {
   font-size: 2.5rem;
   margin-bottom: 15px;
@@ -120,43 +132,85 @@ a {
   font-size: 1.5rem;
   margin-bottom: 20px;
   color: var(--secondary-color);
+  text-align: center;
 }
 
 .homes-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
   margin-bottom: 30px;
 }
 
 .home-card {
-  background-color: var(--light-color);
-  padding: 20px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .home-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.home-icon {
-  font-size: 1.8rem;
+.home-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
   color: var(--primary-color);
 }
 
-.home-name {
-  font-weight: 600;
+.rating-badge i {
+  margin-right: 3px;
+}
+
+.home-content {
+  padding: 15px;
+}
+
+.home-title {
+  font-size: 18px;
+  margin: 0 0 5px 0;
   color: var(--dark-color);
 }
 
-.home-number {
-  color: var(--secondary-color);
-  font-size: 0.9rem;
+.home-location {
+  color: #717171;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+
+.home-location i {
+  margin-right: 5px;
+}
+
+.home-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.home-id {
+  color: #717171;
+}
+
+.home-price {
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 /* CTA Button */
@@ -192,6 +246,9 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .feature-card {
@@ -286,5 +343,24 @@ a {
   
   .footer-links {
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .homes-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }

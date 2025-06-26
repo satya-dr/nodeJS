@@ -3,26 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airbnb Clone</title>
-  <link rel="stylesheet" href="home.css">
+  <title> <%= pageTitle %></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <header class="main-header">
-    <div class="container">
-      <div class="logo">
-        <i class="fas fa-airbnb logo-icon"></i>
-        <span class="logo-text">airbnb</span>
-      </div>
-      <nav class="main-nav">
-        <a href="#" class="nav-link">Become a Host</a>
-        <a href="#" class="nav-link">Help</a>
-        <a href="#" class="nav-link">Sign Up</a>
-        <a href="#" class="nav-link login-btn">Log In</a>
-      </nav>
-    </div>
-  </header>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <%- include('partials/nav') %>
+
   
   <main>
     <section class="hero-section">
@@ -35,12 +27,20 @@
           <div class="homes-list">
             <% registeredHomes.forEach(home => { %>
               <div class="home-card">
-                <div class="home-icon">
-                  <i class="fas fa-home"></i>
+                <div class="home-image" style="background-image: url('<%= home.imageUrl %>');">
+                  <div class="rating-badge">
+                    <i class="fas fa-star"></i> <%= home.rating %>
+                  </div>
                 </div>
-                <div class="home-details">
-                  <p class="home-name"><%= home.houseName %></p>
-                  <p class="home-number">#<%= home.houseNumber %></p>
+                <div class="home-content">
+                  <h3 class="home-title"><%= home.houseName %></h3>
+                  <p class="home-location">
+                    <i class="fas fa-map-marker-alt"></i> <%= home.location %>
+                  </p>
+                  <div class="home-meta">
+                    <span class="home-id">House No.:- <%= home.number %></span>
+                    <span class="home-price">$<%= parseInt(home.price).toLocaleString() %></span>
+                  </div>
                 </div>
               </div>
             <% }) %>
