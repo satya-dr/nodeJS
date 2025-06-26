@@ -1,0 +1,94 @@
+
+<%- include('partials/head') %>
+  <link rel="stylesheet" href="addHome.css">
+</head>
+<body>
+<%- include('partials/nav') %>
+  
+  <main>
+    <div class="form-container">
+      <div class="form-header">
+        <h2>List your property</h2>
+        <p>Join thousands of hosts on Airbnb</p>
+      </div>
+      
+      <form action="/add-home" method="POST">
+        <div class="form-group">
+          <label for="houseName">Property Name</label>
+          <input 
+            type="text" 
+            id="houseName" 
+            name="houseName" 
+            placeholder="e.g. Cozy Mountain Cabin" 
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="number">House Number</label>
+          <input 
+            type="number" 
+            id="number" 
+            name="number" 
+            placeholder="e.g. 123" 
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="number">Price Per Night</label>
+          <input 
+            type="text" 
+            id="number" 
+            name="price" 
+            placeholder="$" 
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="number">Location</label>
+          <input 
+            type="text" 
+            id="number" 
+            name="location" 
+            placeholder="Location" 
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="number">Rating Here</label>
+          <input 
+            type="text" 
+            id="number" 
+            name="rating" 
+            placeholder="Rating" 
+            required
+          >
+        </div>
+        
+        
+        <div class="form-group">
+          <label for="number">Photo Link</label>
+          <input 
+            type="text" 
+            id="number" 
+            name="imageUrl" 
+            placeholder="Photo" 
+            required
+          >
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-home"></i> Submit Listing
+        </button>
+      </form>
+      
+      <div class="form-footer">
+        <p>By submitting, you agree to Airbnb's Terms of Service</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

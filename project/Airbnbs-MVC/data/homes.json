@@ -1,0 +1,18 @@
+[
+    {
+        "houseName": "satyajit's House,",
+        "number": "34565896",
+        "price": "499",
+        "location": "FALAKATA ",
+        "rating": "4",
+        "imageUrl": "https://th.bing.com/th/id/OIP.fii1vOjJNxJkwWT4EcxD8gHaEh?rs=1&pid=ImgDetMain "
+    },
+    {
+        "houseName": "Bhaswati's House",
+        "number": "683902",
+        "price": "699",
+        "location": "FALAKATA",
+        "rating": "4",
+        "imageUrl": "https://th.bing.com/th/id/OIP.L-mMGJcoCMDySdHfP5K8LwHaE8?w=1200&h=800&rs=1&pid=ImgDetMain"
+    }
+]
